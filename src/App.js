@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Pincode from "./components/Pincode";
+import UserProfile from "./components/UserProfile";
+import ProtectedRoute from "./components/ProtectedRoute";
+import "../node_modules/bpg-extrasquare-mtavruli/css/bpg-extrasquare-mtavruli.min.css";
+import "../node_modules/bpg-arial/css/bpg-arial.min.css";
+import "../node_modules/bpg-arial/css/bpg-arial.min.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route element={<ProtectedRoute />}>
+          <Route path="/user" element={<UserProfile />} />
+        </Route>
+        <Route path="/" element={<Pincode />} />
+      </Routes>
+    </Router>
   );
 }
 

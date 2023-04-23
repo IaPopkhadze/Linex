@@ -1,0 +1,268 @@
+* {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.pincode {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #282a36;
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  padding-top: 4rem;
+}
+.pincode .pincode_container {
+  min-width: 500px;
+  height: 400px;
+}
+.pincode .pincode_container .output_container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.pincode .pincode_container .output_container .output_box {
+  width: 60px;
+  height: 70px;
+  border: 2px solid #55525c;
+  background-color: #21232d;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+  color: rgb(167, 164, 164);
+}
+.pincode .pincode_container .keyboard_container {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.2rem;
+}
+.pincode .pincode_container .keyboard_container .each_number {
+  height: 70px;
+  background-color: #1e212b;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+  color: rgb(167, 164, 164);
+}
+.pincode .pincode_container .btn_container {
+  margin-top: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.pincode .pincode_container .btn_container .enter_btn {
+  background-color: #55525c;
+  width: 60%;
+  height: 60px;
+  border: 0;
+  border-radius: 4px;
+  color: #1e212b;
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.pincode .pincode_container .btn_container .enter_btn:hover {
+  font-size: 1.6rem;
+}
+
+.user_profile {
+  background-color: whitesmoke;
+  width: 100%;
+  height: 200vh;
+}
+.user_profile .user_profile_header {
+  width: 100%;
+  height: 85px;
+  margin: auto;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  padding: 10px 15px;
+  color: rgb(70, 70, 70);
+  background-color: #e5e5e5;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+.user_profile .user_profile_header .logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.user_profile .user_profile_header .logout {
+  background-color: #21232d;
+  padding: 0.5rem 1.7rem;
+  margin-left: auto;
+  color: whitesmoke;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: 0;
+  background: #1f2228;
+  font-family: "BPG Arial", sans-serif;
+  transition: 0.5s;
+}
+.user_profile .user_profile_header .right_content {
+  color: #333;
+  width: 95%;
+  display: flex;
+  gap: 0.6rem;
+}
+.user_profile .user_profile_header .right_content span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  font-family: "BPG Arial", sans-serif;
+}
+.user_profile .user_profile_header .right_content .right_child:nth-child(1) {
+  padding-right: 0.6rem;
+  border-right: 1px solid #333;
+}
+.user_profile .table1 {
+  width: 95%;
+  font-size: 0.8rem;
+  border: 1px solid #89898b;
+  margin: 4rem auto;
+  border-radius: 5px;
+  overflow: scroll;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+.user_profile .table1 .table1_header {
+  width: 100%;
+  height: 50px;
+  background-color: #6f6f71;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.user_profile .table1 .table1_header .table1_child {
+  min-width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #2a2e34;
+  font-weight: bold;
+  border-right: 1px solid #25262b;
+}
+.user_profile .table1 .table_1_info .each_info_container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  color: #6f6f71;
+}
+.user_profile .table1 .table_1_info .each_info_container .info_child {
+  min-width: 70px;
+  flex: 1;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  padding-left: 0;
+}
+.user_profile .table1 .table_1_info .each_info_container .info_child button {
+  background-color: #21232d;
+  cursor: pointer;
+  border: 0;
+  padding: 0.4rem;
+  color: #8b8b8d;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px black;
+  letter-spacing: 0.1rem;
+  transition: 0.2s;
+}
+.user_profile .table1 .table_1_info .each_info_container .info_child button:hover {
+  color: #9d9da2;
+  box-shadow: 7px 7px 0px rgba(20, 56, 68, 0.3);
+}
+.user_profile .table1 .table_1_info .each_info_container .info_child button:active {
+  box-shadow: 7px 7px 0px rgba(20, 56, 68, 0.3);
+  margin-top: 7px;
+  margin-left: 7px;
+}
+.user_profile .table1 .table_1_info .each_info_container .btn_container {
+  display: flex;
+  justify-content: center;
+}
+
+.error_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.error_container .error_message {
+  padding: 20px;
+  background-color: #df2929;
+  color: white;
+  font-weight: bold;
+}
+.error_container .error_message .closebutton {
+  font-size: 23;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.overlay .overlay_container {
+  padding: 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  gap: 2rem;
+  font-weight: bold;
+  font-family: "BPG Arial", sans-serif;
+  letter-spacing: 1px;
+}
+.overlay .overlay_container .btn_container {
+  display: flex;
+  gap: 1rem;
+  font-family: "BPG Arial", sans-serif;
+}
+.overlay .overlay_container .btn_container button {
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  border: 0;
+  cursor: pointer;
+  font-family: "BPG Arial", sans-serif;
+  color: whitesmoke;
+}
+.overlay .overlay_container .btn_container .yes {
+  background-color: green;
+}
+.overlay .overlay_container .btn_container .no {
+  background-color: red;
+}/*# sourceMappingURL=style.css.map */
