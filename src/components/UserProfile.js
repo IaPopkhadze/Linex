@@ -92,31 +92,32 @@ const UserProfile = () => {
 
       {/* პირველი */}
       <div className="table1">
-        <div className="table1_header">
+        <div className="table1_header grid4">
           <div className="table1_child">ამანათები</div>
           <div className="table1_child">წონა</div>
-          <div className="table1_child">მდებარეობა</div>
+          <div className="table1_child ">მდებარეობა</div>
           <div className="table1_child">სტატუსი</div>
-          <div className="table1_child">გადახდა</div>
         </div>
         <div className="table_1_info">
           {percels
             .filter((x) => x.status === "გადახდილია")
-            .map((element) => {
+            .map((element, i) => {
               return (
-                <div key={element.id} className="each_info_container">
+                <div
+                  key={element.id}
+                  className="each_info_container grid4"
+                  style={{
+                    backgroundColor: i % 2 ? "var(--color4)" : "var(--color5)",
+                  }}
+                >
                   <div className="info_child">{element.id}</div>
-                  <div className="info_child">{element.weight}</div>
-                  <div className="info_child">{element.location}</div>
-                  <div className="info_child">
-                    {element.status} {element.price} ლ
-                  </div>
-                  <div className="info_child btn_container">
-                    <button
-                      onClick={() => handlePay(element.id, element.price)}
-                    >
-                      გადახდა
-                    </button>
+                  <div className="info_child text_center">{element.weight}</div>
+                  <div className="info_child text_center">{element.location}</div>
+                  <div
+                    className="info_child text_center"
+                    style={{ color: "#00aa55", fontWeight: "bold" }}
+                  >
+                    {element.status}
                   </div>
                 </div>
               );
@@ -179,21 +180,27 @@ const UserProfile = () => {
         <div className="table1_header">
           <div className="table1_child">ამანათები</div>
           <div className="table1_child">წონა</div>
-          <div className="table1_child">მდებარეობა</div>
-          <div className="table1_child">სტატუსი</div>
+          <div className="table1_child">მისამართი</div>
+          <div className="table1_child">გადასახდელი</div>
           <div className="table1_child">გადახდა</div>
         </div>
         <div className="table_1_info">
           {percels
             .filter((x) => x.status !== "გადახდილია")
-            .map((element) => {
+            .map((element, i) => {
               return (
-                <div key={element.id} className="each_info_container">
+                <div
+                  key={element.id}
+                  className="each_info_container"
+                  style={{
+                    backgroundColor: i % 2 ? "var(--color4)" : "var(--color5)",
+                  }}
+                >
                   <div className="info_child">{element.id}</div>
-                  <div className="info_child">{element.weight}</div>
+                  <div className="info_child text_center">{element.weight}</div>
                   <div className="info_child">{element.location}</div>
-                  <div className="info_child">
-                    {element.status} {element.price} ლ
+                  <div className="info_child text_center">
+                    {element.price} ლ
                   </div>
                   <div className="info_child btn_container">
                     <button

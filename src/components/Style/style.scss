@@ -85,7 +85,6 @@
 }
 
 .user_profile {
-  background-color: whitesmoke;
   width: 100%;
   height: 200vh;
   // background-color: #1f2228;
@@ -99,8 +98,8 @@
     align-items: center;
     padding: 10px 15px;
     color: rgb(70, 70, 70);
-    background-color: #e5e5e5;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+
+    box-shadow: 2px 0 7px var(--color3);
     .logo {
       height: 100%;
       // background-color: red;
@@ -113,15 +112,15 @@
     }
     .logout {
       // height: 50px;
-      background-color: #21232d;
+
       padding: 0.5rem 1.7rem;
       margin-left: auto;
       color: whitesmoke;
-      font-size: 1.1rem;
+      font-size: 0.8rem;
       cursor: pointer;
       border: 0;
       // border-radius: 20px;
-      background: #1f2228;
+      background-color: var(--color2);
       font-family: "BPG Arial", sans-serif;
       transition: 0.5s;
     }
@@ -131,11 +130,10 @@
       display: flex;
       // text-shadow: 1px 1px 1px black;
       gap: 0.6rem;
-
+      font-size: 0.9rem;
       span {
-        font-size: 1.2rem;
         font-weight: bold;
-        margin-right: 0.5rem;
+
         font-family: "BPG Arial", sans-serif;
       }
       .right_child:nth-child(1) {
@@ -147,62 +145,66 @@
 
   .table1 {
     width: 95%;
-  font-size: 0.8rem;
-    border: 1px solid #89898b;
+    font-size: 0.8rem;
+    border: 1px solid var(--color1);
     margin: 4rem auto;
-    border-radius: 5px;
+
     overflow: scroll;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     .table1_header {
       width: 100%;
       height: 50px;
-      background-color: #6f6f71;
+      background-color: var(--color2);
       // background-color: whitesmoke;
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      // grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: 20% 13% 20% 27% 20%;
       .table1_child {
         min-width: 70px;
         display: flex;
         justify-content: center;
         align-items: center;
-        color: #2a2e34;
+        color: var(--color1);
         font-weight: bold;
-        border-right: 1px solid #25262b;
+
+        // border-right: 1px solid var(--color1);
+        font-family: "BPG Arial", sans-serif;
       }
     }
     .table_1_info {
       .each_info_container {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        // grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: 20% 13% 20% 27% 20%;
+
         color: #6f6f71;
         .info_child {
           min-width: 70px;
           flex: 1;
-          height: 80px;
+          min-height: 60px;
           display: flex;
           align-items: center;
-          padding: 1rem;
-          padding-left: 0;
+
+          padding-left: 0.2rem;
+
           button {
             // background-color: rgba(40, 91, 110, 0.3);
-            background-color: #21232d;
+            background-color: var(--color2);
+            color: var(--color1);
             cursor: pointer;
             border: 0;
-            padding: 0.4rem ;
- 
-            color: #8b8b8d;
+            padding: 0.5rem;
+
+            font-family: "BPG Arial", sans-serif;
             // border-radius: 5px;
             font-size: 0.8rem;
             font-weight: bold;
-            text-shadow: 1px 1px 1px black;
+            // text-shadow: 1px 1px 1px black;
             letter-spacing: 0.1rem;
             transition: 0.2s;
           }
-          button:hover {
-            color: #9d9da2;
-            box-shadow: 7px 7px 0px rgba(20, 56, 68, 0.3);
-          }
+
           button:active {
             box-shadow: 7px 7px 0px rgba(20, 56, 68, 0.3);
             margin-top: 7px;
@@ -301,6 +303,8 @@
     letter-spacing: 1px;
     .btn_container {
       display: flex;
+      justify-content: center;
+      align-items: center;
       gap: 1rem;
       font-family: "BPG Arial", sans-serif;
       button {
@@ -321,5 +325,12 @@
   }
 }
 
+.text_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-
+.grid4 {
+  grid-template-columns: repeat(4, 1fr) !important;
+}
