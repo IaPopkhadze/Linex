@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { AiOutlineLogout } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { BsCheckLg } from "react-icons/bs";
 import { BsCheck2Square } from "react-icons/bs";
 const UserProfile = () => {
+  const myRef = useRef();
   const navigate = useNavigate();
   const [userBalance, setUserBalacer] = useState(100.6);
   const [showOverlay, setShowOverlay] = useState(false);
@@ -101,9 +102,9 @@ const UserProfile = () => {
   };
   const [currentItem, setCurrentItem] = useState(null);
 
-  const handleCheck = (id) => {
+  const handleCheck = (id, e) => {
     const checkedItem = percels.map((element) =>
-      element.id === id ? { ...element, checked: !element.checked } : element
+      element.id === id ? { ...element, checked: e } : element
     );
     setPercels(checkedItem);
   };
@@ -112,26 +113,47 @@ const UserProfile = () => {
     const recivedItems = percels.map((element) =>
       element.checked ? { ...element, request: true } : element
     );
+
+    const saveBoolean = recivedItems.some((x) => x.request === true);
+    if (saveBoolean) myRef.current.style.opacity = "1";
+
     setPercels(recivedItems);
   };
 
-  const handleCheckAll = () => {
-    const checkAllItem = percels.map((element) =>
-      checkall && element.status === "გადახდილია"
-        ? { ...element, checked: false }
-        : { ...element, checked: true }
-    );
+  const handleCheckAll = (e) => {
+    const checkAllItem = percels.map((element) => {
+      if (checkall && element.status === "გადახდილია") {
+        return {
+          ...element,
+          checked: false,
+        };
+      } else if (!checkall && element.status === "გადახდილია") {
+        return {
+          ...element,
+          checked: true,
+        };
+      } else {
+        return element;
+      }
+    });
+    setCheckAll(e);
     setPercels(checkAllItem);
   };
 
   useEffect(() => {
-    const selected = percels.every((element) => element.checked);
-    if (selected) {
+    const selectedItem = percels
+      .filter((x) => x.status === "გადახდილია")
+      .every((element) => element.checked);
+    if (
+      selectedItem &&
+      percels.filter((x) => x.status === "გადახდილია").length > 0
+    ) {
       setCheckAll(true);
+    } else {
+      setCheckAll(false);
     }
+    console.log(selectedItem, percels);
   }, [percels]);
-
-  console.log(percels);
 
   return (
     <div className="user_profile">
@@ -156,11 +178,9 @@ const UserProfile = () => {
             <div className="table1_header grid4">
               <div className="table1_child">
                 <input
-                  onClick={() => {
-                    setCheckAll(!checkall);
-                    handleCheckAll();
-                  }}
                   type="checkbox"
+                  checked={checkall}
+                  onChange={(e) => handleCheckAll(e.target.checked)}
                   style={{ cursor: "pointer", marginRight: "0.4rem" }}
                 />
               </div>
@@ -208,8 +228,10 @@ const UserProfile = () => {
                         ) : (
                           <input
                             checked={element.checked}
-                            onClick={() => handleCheck(element.id)}
                             type="checkbox"
+                            onChange={(e) =>
+                              handleCheck(element.id, e.target.checked)
+                            }
                             style={{ marginLeft: "0.5rem", cursor: "pointer" }}
                           />
                         )}
@@ -235,6 +257,9 @@ const UserProfile = () => {
             </div>
           </div>
           <div className="recieve_btn_container">
+            <div ref={myRef} className="recieved_request">
+              მოთხოვნა მიღებულია, გთხოვთ დაელოდეთ !
+            </div>
             <button className="recieve_btn" onClick={handleRecieve}>
               მიღება
             </button>
