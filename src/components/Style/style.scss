@@ -185,7 +185,7 @@
           min-height: 60px;
           display: flex;
           align-items: center;
-    text-align: center;
+          text-align: center;
           padding-left: 0.2rem;
 
           button {
@@ -231,7 +231,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .recieved_request{
+    .recieved_request {
       opacity: 0;
       color: rgb(0, 170, 85);
       font-family: "BPG Arial", sans-serif;
@@ -328,12 +328,90 @@
 
 .grid4 {
   grid-template-columns: repeat(5, 1fr) !important;
- 
 }
 
-.table1_child{
+.table1_child {
   display: flex;
   align-items: center;
   justify-content: center;
- text-align: center;
+  text-align: center;
+}
+
+.admin {
+  width: 100%;
+  height: 100vh;
+  background-color: #ecf0f1;
+  padding: 3rem;
+  .title {
+    color: #6a888c;
+    font-weight: bold;
+    font-size: 1.6rem;
+    font-family: "BPG ExtraSquare Mtavruli", sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .percels_container {
+    margin-top: 2rem;
+    width: 700px;
+    background-color: #fc6042;
+
+    .child_container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 1.5rem;
+      border-bottom: 1px solid #df2929;
+      color: #ecf0f1;
+      font-size: 1.2rem;
+      .left {
+        color: #ecf0f1;
+
+        font-size: 1.5rem;
+      }
+      .btns {
+        display: flex;
+        gap: 1.3rem;
+        button {
+          cursor: pointer;
+          background-color: #ecf0f1;
+          border: 0;
+          padding: 0.5rem 1rem;
+          border-radius: 3px;
+          color: #6a888c;
+          border: 1px solid #6a888c;
+          font-size: 1.1rem;
+          // font-family: "BPG ExtraSquare Mtavruli", sans-serif;
+          transition: 0.5s;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+        button:nth-child(1):hover {
+          transform: translateY(-5px);
+          background-color: green;
+          border: 1px solid white;
+          color: white;
+        }
+        button:nth-child(2):hover {
+          transform: translateY(-5px);
+          background-color: red;
+          border: 1px solid white;
+          color: white;
+        }
+      }
+    }
+  }
+  .cancel {
+    position: absolute;
+    top: 10px;
+    right: 2rem;
+    color: #df2929;
+    font-size: 2rem;
+   transition: 0.5s;
+    cursor: pointer;
+  }
+  .cancel:hover {
+    font-size: 2.5rem;
+  }
 }
