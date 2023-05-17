@@ -9,16 +9,16 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
   return (
     <>
-         <Admin /></>
-    // <Router>
-
-    //   {/* <Routes>
-    //     <Route element={<ProtectedRoute />}>
-    //       <Route path="/user" element={<UserProfile />} />
-    //     </Route>
-    //     <Route path="/" element={<Pincode />} />
-    //   </Routes> */}
-    // </Router>
+      <Admin />
+      <Router>
+        {/* <Routes>
+          <Route element={<ProtectedRoute />}>
+            <Route path="/user" element={<UserProfile />} />
+          </Route>
+          <Route path="/" element={<Pincode />} />
+        </Routes> */}
+      </Router>
+    </>
   );
 }
 

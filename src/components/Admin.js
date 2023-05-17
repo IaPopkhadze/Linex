@@ -25,8 +25,7 @@ const Admin = () => {
   return (
     <div className="admin">
       <div className="title">
-        გასაცემი ამანათები{" "}
-        <RxDoubleArrowRight style={{ marginBottom: "0.4rem" }} /> ოთახი 1123{" "}
+        გასაცემი ამანათები <RxDoubleArrowRight style={{ marginBottom: "0.4rem" }} /> ოთახი 1123{" "}
       </div>
       <div className="percels_container">
         {temporaryObject.map((item, i) => {
@@ -36,12 +35,8 @@ const Admin = () => {
                 {i + 1}. {item.id}
               </div>
               <div className="btns">
-                <button>
-                  <GiCheckMark /> მიღება
-                </button>
-                <button>
-                  <FiX style={{ fontSize: "1.3rem" }} /> გაუქმება
-                </button>
+                <button>გაცემა</button>
+                <button>გაუქმება</button>
               </div>
             </div>
           );
