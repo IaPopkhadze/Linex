@@ -9,14 +9,14 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
   return (
     <>
-      <Admin />
+      {/* <Admin /> */}
       <Router>
-        {/* <Routes>
+        <Routes>
           <Route element={<ProtectedRoute />}>
             <Route path="/user" element={<UserProfile />} />
           </Route>
           <Route path="/" element={<Pincode />} />
-        </Routes> */}
+        </Routes>
       </Router>
     </>
   );
